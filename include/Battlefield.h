@@ -2,6 +2,7 @@
 #define BATTLEFIELD_H
 #include <string>
 #include <SDL2/SDL.h>
+#include <Robot.h>
 #include <iostream>
 class Battlefield
 {
@@ -20,6 +21,7 @@ class Battlefield
         int width = 800;
         int height = 600;
         bool close;
+        Robot* robot1;
         SDL_Window *battlefield = nullptr;
         SDL_Renderer *renderer = nullptr;
 };

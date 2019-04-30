@@ -7,6 +7,7 @@ Battlefield::Battlefield(const std::string &title , int width, int height):
 title(title), width(width), height(height)
 {
     close = !init();
+    robot1 = new Robot( width / 2 , height / 2 , 50 , 50 , 40 );
 }
 
 Battlefield::~Battlefield()
@@ -48,5 +49,9 @@ bool Battlefield::init(){
     }
  }
  void Battlefield::clear(){
-
+    SDL_SetRenderDrawColor(renderer , 0 , 0, 200, 255);
+    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(renderer, 200, 0 , 0, 255);
+    SDL_RenderFillRect(renderer,robot1->getFigure());
+    SDL_RenderPresent(renderer);
  }
